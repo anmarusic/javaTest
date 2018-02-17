@@ -1,0 +1,14 @@
+*~
+.classpath
+.project
+target
+.settings
+.DS_Store
+out
+.faces-config.xml.jsfdia
+MANIFEST.MF
+.idea
+*.iml
+*.jar
+RemoteSystemsTempFiles
+bin
