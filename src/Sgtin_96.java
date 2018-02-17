@@ -12,6 +12,7 @@ public class Sgtin_96 {
     private String serial;
 
     private static int invalidSgtin_96=0;
+    private static int validSgtin_96=0;
 
     public Sgtin_96(String sgtin_96) throws Exception {
         sgtin_96=hexToBin(sgtin_96);
@@ -65,6 +66,7 @@ public class Sgtin_96 {
                 default: throw new Exception("Invalid partition");
             }
             this.serial=sgtin_96.substring(58,96);
+            validSgtin_96++;
 
         }
     }
@@ -99,6 +101,10 @@ public class Sgtin_96 {
 
     public static int getInvalidSgtin_96() {
         return invalidSgtin_96;
+    }
+    
+    public static int getValidSgtin_96() {
+        return validSgtin_96;
     }
 
     public boolean isThisProduct(Product p) {
