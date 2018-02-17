@@ -53,7 +53,7 @@ public class Main {
         }
         System.out.println("---------------------------READER-CLOSE--------------------------");
 
-        System.out.println("Postoji "+data.size()+" prozvoda");
+        System.out.println("Postoji "+Sgtin_96.getValidSgtin_96()+" prozvoda");
 
         System.out.println("od toga "+milkas+" milka oreo");
 
