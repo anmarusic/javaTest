@@ -96,7 +96,7 @@ public class Sgtin_96 {
     }
 
     public String getSerial() {
-        return asHex(serial);
+        return serial;
     }
 
     public static int getInvalidSgtin_96() {

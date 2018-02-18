@@ -28,20 +28,21 @@ public class Main {
             }
             fr = new FileReader("tags.txt");
             br = new BufferedReader(fr);
-
+            int i = 0;
             while ((sCurrentLine = br.readLine()) != null) {
                 Sgtin_96 bla;
                 try {
                     bla = new Sgtin_96(sCurrentLine);
 
                     if(bla.isThisProduct(getMilka(data))) {
+                        System.out.println(i+": Milka serial number: " + Integer.parseInt(bla.getSerial(),2));
                         milkas++;
                     }
 
                 } catch (Exception e) {
-                    System.out.println(e.getMessage());
+                    System.out.println(i+": "+e.getMessage());
                 }
-
+                i++;
             }
 
             fr.close();
@@ -51,6 +52,7 @@ public class Main {
         }
         System.out.println("---------------------------READER-CLOSE--------------------------");
 
+        System.out.println(getMilka(data).getCompanyName()+" "+getMilka(data).getItemName());
         System.out.println("Postoji "+Sgtin_96.getValidSgtin_96()+" prozvoda");
 
         System.out.println("od toga "+milkas+" milka oreo");
