@@ -18,7 +18,7 @@ public class Sgtin_96 {
         sgtin_96=hexToBin(sgtin_96);
         if(!sgtin_96.substring(0,8).contains("00110000") || sgtin_96.length() != 96) {
             invalidSgtin_96++;
-            throw new Exception("Invalid string: "+ sgtin_96);
+            throw new Exception("Invalid SGTING_96 EPC: "+ sgtin_96);
         } else {
             this.header = sgtin_96.substring(0,8);
             this.filter = sgtin_96.substring(8,11);
@@ -121,7 +121,7 @@ public class Sgtin_96 {
         return hexStr;
     }
 
-    static String hexToBin(String s) {
+    static String hexToBin(String s) throws Exception {
         try {
             String preBin = new BigInteger(s, 16).toString(2);
             Integer length = preBin.length();
@@ -133,7 +133,7 @@ public class Sgtin_96 {
             preBin = "00"+preBin;
             return preBin;
         } catch (Exception e){
-            return ("Error for: " + s);
+            throw new Exception("Error converting from hex for: " + s);
         }
     }
 }
