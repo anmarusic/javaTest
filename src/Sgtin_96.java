@@ -16,7 +16,7 @@ public class Sgtin_96 {
 
     public Sgtin_96(String sgtin_96) throws Exception {
         sgtin_96=hexToBin(sgtin_96);
-        if(sgtin_96.substring(0,8) != "00110000" && sgtin_96.length() != 96) {
+        if(!sgtin_96.substring(0,8).contains("00110000") || sgtin_96.length() != 96) {
             invalidSgtin_96++;
             throw new Exception("Invalid string: "+ sgtin_96);
         } else {
